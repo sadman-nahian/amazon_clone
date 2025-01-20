@@ -1,21 +1,42 @@
 import React, { useEffect, useState } from "react";
 import "../styles/Login.css";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
+import { auth } from "./Firebase";
+import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 
 function Login() {
+ const navigate=useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const handleSubmit=(e)=>{
+  const handleSubmit=async (e)=>{
     e.preventDefault();
-    console.log("submitted")
+   
     //firebase stuff...
+    try{
+      const user=await signInWithEmailAndPassword(auth,email,password);
+      if(auth){
+        navigate("/");
+      }
+
+    }catch(error){
+      alert(error.message);
+
+    }
 
   }
-  const handleCreateAccount=(e)=>{
+  const handleCreateAccount=async (e)=>{
     e.preventDefault();
-    console.log("tring to create new account");
-    //firebase stuff..
     
+    //firebase stuff..
+    try {
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      if(auth){
+        navigate('/');
+      }
+    } catch (error) {
+      alert(error.message);
+    }
+
   }
   return (
     <div className="login">

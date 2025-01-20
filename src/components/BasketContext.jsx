@@ -4,6 +4,7 @@ import { createContext, useState } from "react";
 const BasketContext = createContext();
 
 export const BasketProvider = ({ children }) => {
+  const [user,setUser]=useState(null);
   const [basket, setBasket] = useState([]);
   const [itemCount, setItemCount] = useState(0);
   const [totalprice, setTotalPrice] = useState(0);
@@ -60,7 +61,7 @@ export const BasketProvider = ({ children }) => {
 
   return (
     <BasketContext.Provider
-      value={{ basket, setBasket, itemCount, setItemCount, totalprice, setTotalPrice, products,setProducts,filteredData, setFilteredData }}
+      value={{ basket, setBasket, itemCount, setItemCount, totalprice, setTotalPrice, products,setProducts,filteredData, setFilteredData,user,setUser}}
     >
       {children}
     </BasketContext.Provider>

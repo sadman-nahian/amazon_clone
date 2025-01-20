@@ -19,8 +19,8 @@ function Product({ id, title, image, price, rating }) {
     
   }
   useEffect(() => {
-    console.log('Updated Basket:', basket);
-    console.log('totalCost' ,totalprice)
+    // console.log('Updated Basket:', basket);
+    // console.log('totalCost' ,totalprice)
   }, [basket]);
 
   return (

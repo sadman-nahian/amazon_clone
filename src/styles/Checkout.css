@@ -5,7 +5,10 @@
     color:black;
 }
 
-
+.checkout__image__header{
+  object-fit: contain;
+  height:auto;
+}
 .checkout__header{
     color:black;
     margin-left:10px;
@@ -37,6 +40,7 @@
     width: 60%;
     flex-direction: column;
     margin-left:20px;
+    object-fit: contain;
 }
 .checkout__image{
     width:20%;
@@ -100,7 +104,7 @@ strong{
 
   }
   .checkout__emptyText{
-    color:green;
+    color:black;
     margin-left: 10px;
     font-size: 18px;
   }

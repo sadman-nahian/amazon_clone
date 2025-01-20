@@ -5,10 +5,15 @@ import { Link } from "react-router-dom";
 import SearchIcon from "@mui/icons-material/Search";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import BasketContext from "./BasketContext";
+import { auth } from "./Firebase.jsx";
 
 function Header() {
-  const {itemCount,products,setProducts,filteredData,setFilteredData}=useContext(BasketContext);
+  const {itemCount,products,setProducts,filteredData,setFilteredData,user}=useContext(BasketContext);
   const [query,setQuery]=useState("");
+  const handleSignOut = () => {
+    auth.signOut();
+    setUser(null); 
+  };
   const handleChange = (e) => {
     const newQuery = e.target.value;
     setQuery(newQuery);
@@ -45,8 +50,12 @@ function Header() {
       <div className="header__nav">
         <Link to="/login" className="header__link">
           <div className="header__option">
-            <span className="header__optionLineOne">Hello</span>
-            <span className="header__optionLineTwo">Sign in</span>
+            <span className="header__optionLineOne">{user? user:"Hello"}</span>
+            <span className="header__optionLineTwo"> {user ? (
+          <span onClick={handleSignOut}>Sign Out</span>
+        ) : (
+          "Sign in"
+        )}</span>
           </div>
         </Link>
         <Link to="/" className="header__link">
