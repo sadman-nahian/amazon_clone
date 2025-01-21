@@ -21,8 +21,8 @@ A fully functional e-commerce web application replicating core features of Amazo
 - **Firebase Integration**: Overcame initial challenges with Firebase setup and configuration for authentication and database.
 - **Performance Optimization**: Ensured smooth rendering and minimal re-renders for a better user experience.
 
-<p align="center">
-  <video src="amazon-clone.gif" controls="controls" style="max-width: 100%; height: auto;">
-    Your browser does not support the video tag.
-  </video>
-</p>
+## Video Walkthrough
+
+Here's a walkthrough of implemented features:
+
+<img src="amazon-clone.gif" title='Video Walkthrough' width='' alt='Video Walkthrough' />
