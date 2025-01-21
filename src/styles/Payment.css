@@ -1,0 +1,47 @@
+.payment{
+    width:80%;
+    
+    
+    margin: auto;
+    padding: 4px;
+    display: flex;
+    flex-direction: column;
+}
+.payment__header{
+    padding:2px;
+    border:1px solid gray;
+    border-radius: 6px;
+    display:flex;
+    justify-content: space-between;
+    width:100%;
+    
+}
+.payment__address{
+    width:100%;
+    margin-top:20px;
+}
+.payment__address__form{
+    display:flex;
+    flex-direction: column;
+}
+input{
+    margin-bottom:4px;
+    width:60%;
+    height:16px;
+    padding:2px;
+}
+.payment__save{
+    width:30%;
+    background-color:#f3a847 ;
+    cursor: pointer;
+    margin-top: 10px;
+    
+    padding: 4px;
+}
+.payment__method{
+    margin-top:20px;
+}
+.Payment__method__form{
+    display:flex;
+    flex-direction: column;
+}

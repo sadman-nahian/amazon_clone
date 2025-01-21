@@ -2,10 +2,13 @@ import React, { useContext } from 'react'
 import BasketContext from './BasketContext'
 import Header from "./Header.jsx"
 import "../styles/Checkout.css";
+import { useNavigate } from 'react-router-dom';
+
 
 
 function Checkout() {
-    const{ basket, setBasket, itemCount, setItemCount, totalprice, setTotalPrice, products,setProducts,filteredData, setFilteredData }=useContext(BasketContext);
+    const navigate=useNavigate();
+    const{ basket, setBasket, itemCount, setItemCount, totalprice, setTotalPrice, products,setProducts,filteredData, setFilteredData,user }=useContext(BasketContext);
     const emptyCart="Your cart is currently empty .Add items to see total ."
     const handleRemove=(id,price)=>{
         const index=basket.findIndex((x)=>x.id===id);
@@ -18,6 +21,16 @@ function Checkout() {
         } else {
             setTotalPrice((prevPrice) => prevPrice - price); 
         }
+    }
+    const handleProceed=()=>{
+        if(user){
+            navigate("/payment");
+
+        }else{
+            alert("You must sign in first.")
+        }
+        
+        
     }
   return (
     <div className="checkout">
@@ -38,7 +51,7 @@ function Checkout() {
             </div>
            
         
-        <button className="proceed__button">Proceed To Checkout</button>
+        <button className="proceed__button" onClick={handleProceed}>Proceed To Checkout</button>
 
         </div>
 

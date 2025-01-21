@@ -6,6 +6,7 @@ import Header from "./components/Header.jsx";
 import Home from "./components/Home.jsx";
 import Checkout from "./components/Checkout.jsx";
 import Login from "./components/Login.jsx"
+import Payment from "./components/Payment.jsx"
 import { auth } from "./components/Firebase.jsx";
 
 import BasketContext from "./components/BasketContext.jsx";
@@ -50,6 +51,12 @@ function App() {
               </div>
             }
           />
+          <Route path="/payment" element={
+            <div>
+              <Header/>
+              <Payment/>
+            </div>
+          } />
         </Routes>
       </div>
     </Router>
