@@ -48,7 +48,7 @@ const Payment = () => {
     <div className='payment'>
         <div className="payment__header">
             <div className="payment__items"><h3>Checkout({itemCount} items)</h3> </div>
-            <div className="payment__total"><h3>Total :{totalprice}$</h3></div>
+            <div className="payment__total"><h3>Total :{totalprice.toFixed(2)}$</h3></div>
         </div>
         <div className="payment__address">
             <h2>Address</h2>

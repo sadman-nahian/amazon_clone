@@ -56,6 +56,28 @@ export const BasketProvider = ({ children }) => {
       price: 1998,
       rating: 4,
     },
+    {
+      id: "1007",
+      title: "Under Armour Men's Charged Assert 10 Running Shoe",
+      image: "https://m.media-amazon.com/images/I/71k2ZobLduL._AC_SY395_.jpg",
+      price: 65,
+      rating: 4,
+    },
+    {
+      id: "1008",
+      title: "Optimum Nutrition Gold Standard 100% Whey Protein Powder",
+      image: "https://m.media-amazon.com/images/I/71D3hzqn5rL._AC_SX425_.jpg",
+      price: 37,
+      rating: 5,
+    },
+    {
+      id: "1009",
+      title: "Ninja BL770 Mega Kitchen System, 1500W,",
+      image: "https://m.media-amazon.com/images/I/81WPPmP+4mL._AC_SY300_SX300_.jpg",
+      price: 159,
+      rating: 5,
+    },
+    
   ];
   const[products,setProducts]=useState(productDummy);
 
